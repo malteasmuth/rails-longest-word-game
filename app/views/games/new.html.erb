@@ -1,0 +1,10 @@
+<h1>Longest word game<h1>
+
+<h2><%= @random_word%><h2>
+
+<form action="/score" method="post" data-turbo="false">
+  <input type="text" name="guess_word">
+  <input type="submit" value="Guess!">
+  <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+  <%= hidden_field_tag :random_word, @random_word %>
+</form>
